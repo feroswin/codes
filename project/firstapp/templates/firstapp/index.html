@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}} </title>
+</head>
+<body>
+<link type="text/css" rel="stylesheet"  href="{% static 'firstapp/css/style.css' %}" />
+<h1>{{title}}</h1>
+
+{% for item in products %}
+    <div>
+        <p>{{item.title}}</p>
+        <p>{{item.content}}</p>
+        <p>{{item.created_at|date:"Y-m-d H:i"}}</p>
+      <hr>
+{% endfor %}
+<!-- Перебирает список из БД и выводит -->
+    </div>
+</body>
+</html>
